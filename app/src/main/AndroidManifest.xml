@@ -10,6 +10,21 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.FitnessAPP">
         <activity
+            android:name=".Settings"
+            android:exported="false" />
+        <activity
+            android:name=".Dashboard"
+            android:exported="false" />
+        <activity
+            android:name=".StartActivity"
+            android:exported="false" />
+        <activity
+            android:name=".ProfileMainPage"
+            android:exported="false" />
+        <activity
+            android:name=".Questionnaire4"
+            android:exported="false" />
+        <activity
             android:name=".Questionnaire3"
             android:exported="false" />
         <activity

@@ -12,7 +12,7 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_marginTop="20dp"
-        android:text="Choose your body Type"
+        android:text="Choose your body type"
         android:textAlignment="center"
         android:textSize="30dp" />
 

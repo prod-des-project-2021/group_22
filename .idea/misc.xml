@@ -7,10 +7,17 @@
         <entry key="..\:/OAMK/Project Implementation/FitnessAPP/app/src/main/res/drawable/radio_selected.xml" value="0.21574074074074073" />
         <entry key="..\:/OAMK/Project Implementation/FitnessAPP/app/src/main/res/drawable/radio_selector.xml" value="0.21574074074074073" />
         <entry key="..\:/OAMK/Project Implementation/FitnessAPP/app/src/main/res/drawable/text_color.xml" value="0.21574074074074073" />
+        <entry key="..\:/OAMK/Project Implementation/FitnessAPP/app/src/main/res/layout/activity_dashboard.xml" value="0.33" />
         <entry key="..\:/OAMK/Project Implementation/FitnessAPP/app/src/main/res/layout/activity_main.xml" value="0.33" />
+        <entry key="..\:/OAMK/Project Implementation/FitnessAPP/app/src/main/res/layout/activity_profile_main_page.xml" value="0.33" />
         <entry key="..\:/OAMK/Project Implementation/FitnessAPP/app/src/main/res/layout/activity_questionnaire2.xml" value="0.33" />
         <entry key="..\:/OAMK/Project Implementation/FitnessAPP/app/src/main/res/layout/activity_questionnaire3.xml" value="0.33" />
+        <entry key="..\:/OAMK/Project Implementation/FitnessAPP/app/src/main/res/layout/activity_questionnaire4.xml" value="0.33" />
+        <entry key="..\:/OAMK/Project Implementation/FitnessAPP/app/src/main/res/layout/activity_settings.xml" value="0.36666666666666664" />
+        <entry key="..\:/OAMK/Project Implementation/FitnessAPP/app/src/main/res/layout/activity_start.xml" value="0.25" />
+        <entry key="..\:/OAMK/Project Implementation/FitnessAPP/app/src/main/res/layout/dropdown_item.xml" value="0.67" />
         <entry key="..\:/OAMK/Project Implementation/FitnessAPP/app/src/main/res/layout/list_item.xml" value="0.25" />
+        <entry key="..\:/OAMK/Project Implementation/FitnessAPP/app/src/main/res/layout/toolbar.xml" value="0.25" />
       </map>
     </option>
   </component>
