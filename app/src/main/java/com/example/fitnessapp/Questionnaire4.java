@@ -32,6 +32,7 @@ public class Questionnaire4 extends AppCompatActivity {
             @Override
             public void onClick(View v) {
                 openQuestionnaire3();
+                finish();
             }
         });
 

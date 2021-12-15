@@ -33,6 +33,7 @@ public class Questionnaire2 extends AppCompatActivity {
             public void onClick(View v)
             {
                 openStart();
+                finish();
             }
         });
 

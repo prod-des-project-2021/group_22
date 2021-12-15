@@ -15,7 +15,7 @@ import java.text.DecimalFormat;
 public class ProfileMainPage extends AppCompatActivity {
     TextView name, bmi,rez,cals,ideal;
     UserDatabase db;
-    ImageButton dashboard;
+    ImageButton dashboard, settings;
     DecimalFormat df;
 
     @Override
@@ -29,6 +29,7 @@ public class ProfileMainPage extends AppCompatActivity {
         cals = findViewById(R.id.cal);
         ideal = findViewById(R.id.ideal);
         dashboard = (ImageButton) findViewById(R.id.dashboard);
+        settings = (ImageButton) findViewById(R.id.settings);
         db = new UserDatabase(this);
         df = new DecimalFormat("0.00");
 
@@ -76,13 +77,13 @@ public class ProfileMainPage extends AppCompatActivity {
         int calories = 0;
         float ideal_kg = 0;
         
-        if (bmical < 18.5)
+        if (bmical < 18.6)
             resTXT = "Underweight";
-        else if (bmical > 18.5 && bmical < 24.9)
+        else if (bmical > 18.6 && bmical < 24.9)
             resTXT = "Normal";
-        else if (bmical > 25 && bmical < 29.9)
+        else if (bmical > 24.9 && bmical < 29.9)
             resTXT = "Overweight";
-        else if (bmical > 30)
+        else if (bmical > 29.9)
             resTXT = "Obese";
 
 
@@ -101,9 +102,17 @@ public class ProfileMainPage extends AppCompatActivity {
         else if (body_type.matches("Endomorph") && goal.matches("Gain Weight"))
             calories = weight*35;
         else if (body_type.matches("Mesomorph") && goal.matches("Gain Weight"))
-            calories = weight*43;
+            calories = weight*37;
         else if (body_type.matches("Ectomorph") && goal.matches("Gain Weight"))
-            calories = weight*70;
+            calories = weight*39;
+
+        if (resTXT.matches("Overweight"))
+            calories = calories - 250;
+        else if (resTXT.matches("Obese"))
+            calories = calories - 500;
+        else if (resTXT.matches("Underweight"))
+            calories = calories + 500;
+
 
         height = height*100;
 
@@ -111,6 +120,32 @@ public class ProfileMainPage extends AppCompatActivity {
             ideal_kg = (height - 100 - ((height - 150)/4)) + ((age-20)/4) ;
         else if (sexTXT.matches("Female"))
             ideal_kg = (height - 100 - ((height - 150)/2)) + ((age-20)/2) ;
+
+        if(activity.matches("Highly Active") && goal.matches("Lose Weight"))
+        {
+            calories = calories + 300;
+        }
+        else if(activity.matches("Moderate") && goal.matches("Lose Weight"))
+        {
+            calories = calories +150;
+        }
+        else if(activity.matches("Highly Active") && goal.matches("Gain Muscle Mass"))
+        {
+            calories = calories + 300;
+        }
+        else if(activity.matches("Moderate") && goal.matches("Gain Muscle Mass"))
+        {
+            calories = calories + 150;
+        }
+        else if(activity.matches("Highly Active") && goal.matches("Gain Weight"))
+        {
+            calories = calories + 300;
+        }
+        else if(activity.matches("Moderate") && goal.matches("Gain Weight"))
+        {
+            calories = calories + 150;
+        }
+
 
 
         String caloriesTXT = String.valueOf(calories);
@@ -127,14 +162,27 @@ public class ProfileMainPage extends AppCompatActivity {
             @Override
             public void onClick(View v)
             {
-                openDashboard();
+                openWorkoutDiary();
+            }
+        });
+
+        settings.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                openSettings();
+                finish();
             }
         });
 
     }
-    public void openDashboard()
+    public void openWorkoutDiary()
     {
-        Intent  intent = new Intent(this, Dashboard.class);
+        Intent  intent = new Intent(this, MealPlan.class);
+        startActivity(intent);
+    }
+    public void openSettings()
+    {
+        Intent  intent = new Intent(this, Settings.class);
         startActivity(intent);
     }
 }

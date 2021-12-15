@@ -129,4 +129,71 @@ public class UserDatabase extends SQLiteOpenHelper {
         return cursor;
     }
 
+    public void editName(String name ,String nameedit)
+    {
+        SQLiteDatabase db = this.getWritableDatabase();
+        ContentValues cv = new ContentValues();
+        Cursor cursor = db.rawQuery("SELECT * FROM " + TABLE_NAME + " WHERE " + COLUMN_NAME + " = ?", new String[]{name});
+        cv.put(COLUMN_NAME, nameedit);
+        if(cursor.getCount()>0)
+        {
+            db.update(TABLE_NAME, cv,COLUMN_NAME +"=?",new String[]{name});
+        }
+
+    }
+
+    public void editAge(String name ,String ageedit)
+    {
+        SQLiteDatabase db = this.getWritableDatabase();
+        ContentValues cv = new ContentValues();
+        Cursor cursor = db.rawQuery("SELECT * FROM " + TABLE_NAME + " WHERE " + COLUMN_NAME + " = ?", new String[]{name});
+        cv.put(COLUMN_AGE, ageedit);
+        if(cursor.getCount()>0)
+        {
+            db.update(TABLE_NAME, cv,COLUMN_NAME +"=?",new String[]{name});
+        }
+
+    }
+
+    public void editHeight(String name ,String heightedit)
+    {
+        SQLiteDatabase db = this.getWritableDatabase();
+        ContentValues cv = new ContentValues();
+        Cursor cursor = db.rawQuery("SELECT * FROM " + TABLE_NAME + " WHERE " + COLUMN_NAME + " = ?", new String[]{name});
+        cv.put(COLUMN_HEIGHT, heightedit);
+        if(cursor.getCount()>0)
+        {
+            db.update(TABLE_NAME, cv,COLUMN_NAME +"=?",new String[]{name});
+        }
+
+    }
+
+    public void editWeight(String name ,String weightedit)
+    {
+        SQLiteDatabase db = this.getWritableDatabase();
+        ContentValues cv = new ContentValues();
+        Cursor cursor = db.rawQuery("SELECT * FROM " + TABLE_NAME + " WHERE " + COLUMN_NAME + " = ?", new String[]{name});
+        cv.put(COLUMN_WEIGHT, weightedit);
+        if(cursor.getCount()>0)
+        {
+            db.update(TABLE_NAME, cv,COLUMN_NAME +"=?",new String[]{name});
+        }
+
+    }
+
+    public void editSex(String name ,String sexedit)
+    {
+        SQLiteDatabase db = this.getWritableDatabase();
+        ContentValues cv = new ContentValues();
+        Cursor cursor = db.rawQuery("SELECT * FROM " + TABLE_NAME + " WHERE " + COLUMN_NAME + " = ?", new String[]{name});
+        cv.put(COLUMN_SEX, sexedit);
+        if(cursor.getCount()>0)
+        {
+            db.update(TABLE_NAME, cv,COLUMN_NAME +"=?",new String[]{name});
+        }
+
+    }
+
+
+
 }

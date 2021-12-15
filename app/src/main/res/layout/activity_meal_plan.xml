@@ -1,0 +1,102 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".MealPlan">
+
+    <com.google.android.material.floatingactionbutton.FloatingActionButton
+        android:id="@+id/addbuttonmeal"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginEnd="48dp"
+        android:layout_marginBottom="48dp"
+        android:clickable="true"
+        android:focusable="true"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:srcCompat="@drawable/ic_add"
+        tools:ignore="SpeakableTextPresentCheck" />
+
+    <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/recyclerviewmeal"
+        android:paddingTop="70dp"
+        android:layout_width="409dp"
+        android:layout_height="729dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+
+
+
+    <RelativeLayout
+        android:id="@+id/relativeLayoutmeal"
+        android:layout_width="match_parent"
+        android:layout_height="?actionBarSize"
+        android:background="@color/purple_500"
+        tools:ignore="MissingConstraints">
+
+        <ImageButton
+            android:id="@+id/deleteallbtnmeal"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="7dp"
+            android:background="@color/purple_500"
+            android:clickable="true"
+            android:minWidth="39dp"
+            android:minHeight="40dp"
+            android:src="@drawable/ic_delete"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            tools:ignore="MissingConstraints,SpeakableTextPresentCheck,TouchTargetSizeCheck"
+            android:layout_marginLeft="350dp"/>
+
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentStart="true"
+            android:layout_marginLeft="20dp"
+            android:layout_marginTop="15dp"
+            android:text="Meal Plan"
+            android:textColor="@color/white"
+            android:textSize="20sp" />
+
+
+
+    </RelativeLayout>
+
+
+
+    <ImageView
+        android:id="@+id/imageView1"
+        android:layout_width="164dp"
+        android:layout_height="197dp"
+        android:alpha="0.1"
+        app:layout_constraintBottom_toBottomOf="@+id/recyclerviewmeal"
+        app:layout_constraintEnd_toEndOf="@+id/recyclerviewmeal"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/relativeLayoutmeal"
+        app:layout_constraintVertical_bias="0.318"
+        app:srcCompat="@drawable/ic_empty_24"
+        android:visibility="gone"/>
+
+    <TextView
+        android:id="@+id/nodata1"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:alpha="0.4"
+        android:text="   No Meals"
+        android:textSize="20sp"
+        app:layout_constraintBottom_toBottomOf="@+id/recyclerviewmeal"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/relativeLayoutmeal"
+        app:layout_constraintVertical_bias="0.531"
+        tools:ignore="MissingConstraints"
+        android:visibility="gone"/>
+
+</androidx.constraintlayout.widget.ConstraintLayout>
