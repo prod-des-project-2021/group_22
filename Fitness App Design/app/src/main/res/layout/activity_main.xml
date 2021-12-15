@@ -1,0 +1,208 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@drawable/Gradient"
+    tools:context=".MainActivity">
+
+    <FrameLayout
+        android:id="@+id/fragment_container"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_above="@id/bottom_nav"
+        android:layout_marginBottom="-50dp">
+
+
+    </FrameLayout>
+<com.google.android.material.card.MaterialCardView
+    android:id="@+id/WaterIntake"
+    android:layout_width="0dp"
+    android:layout_height="wrap_content"
+    android:layout_margin="5dp"
+    android:clickable="true"
+    android:focusable="true"
+    app:cardBackgroundColor="@android:color/white"
+    app:cardCornerRadius="60dp"
+    app:cardElevation="3dp"
+    />
+
+    <androidx.cardview.widget.CardView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="70dp"
+        android:layout_marginTop="70dp"
+        android:layout_marginEnd="70dp"
+        android:layout_marginBottom="70dp"
+        app:cardBackgroundColor="@color/white"
+        app:cardCornerRadius="20dp"
+        app:cardElevation="10dp"
+        app:cardMaxElevation="25dp"
+        app:cardPreventCornerOverlap="true"
+        app:cardUseCompatPadding="true" />
+    <ImageView
+        android:layout_width="75dp"
+        android:layout_height="75dp"
+        android:layout_gravity="center"
+        android:src="@drawable/water"
+        android:layout_margin="80dp"
+        android:id="@+id/img"
+        android:contentDescription="@string/water_picture" />
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/water_needed"
+        android:layout_gravity="bottom|center_horizontal"
+        android:layout_marginTop="90dp"
+        android:textSize="20sp"
+        android:textStyle="bold"
+        android:layout_marginStart="170dp"
+
+        />
+    <com.google.android.material.card.MaterialCardView
+        android:id="@+id/CalorieIntake"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_margin="5dp"
+        android:clickable="true"
+        android:focusable="true"
+        app:cardBackgroundColor="@android:color/white"
+        app:cardCornerRadius="60dp"
+        app:cardElevation="3dp"
+        />
+
+    <androidx.cardview.widget.CardView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="70dp"
+        android:layout_marginTop="200dp"
+        android:layout_marginEnd="70dp"
+        android:layout_marginBottom="370dp"
+        app:cardBackgroundColor="@color/white"
+        app:cardCornerRadius="20dp"
+        app:cardElevation="10dp"
+        app:cardMaxElevation="25dp"
+        app:cardPreventCornerOverlap="true"
+        app:cardUseCompatPadding="true" />
+
+    <ImageView
+        android:layout_width="75dp"
+        android:layout_height="75dp"
+        android:layout_gravity="center"
+        android:src="@drawable/Eating"
+        android:layout_marginTop="205dp"
+        android:layout_marginStart="80dp"
+        android:id="@+id/img2"
+        android:contentDescription="@string/food_picture" />
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/calories_left"
+        android:layout_gravity="bottom|center_horizontal"
+        android:layout_marginTop="215dp"
+        android:textSize="20sp"
+        android:textStyle="bold"
+        android:layout_marginStart="170dp"
+
+        />
+    <com.google.android.material.card.MaterialCardView
+        android:id="@+id/DailyWorkout"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_margin="5dp"
+        android:clickable="true"
+        android:focusable="true"
+        app:cardBackgroundColor="@android:color/white"
+        app:cardCornerRadius="60dp"
+        app:cardElevation="3dp"
+        />
+
+    <androidx.cardview.widget.CardView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="70dp"
+        android:layout_marginTop="330dp"
+        android:layout_marginEnd="70dp"
+        android:layout_marginBottom="70dp"
+        app:cardBackgroundColor="@color/white"
+        app:cardCornerRadius="20dp"
+        app:cardElevation="10dp"
+        app:cardMaxElevation="25dp"
+        app:cardPreventCornerOverlap="true"
+        app:cardUseCompatPadding="true" />
+    <ImageView
+        android:layout_width="75dp"
+        android:layout_height="75dp"
+        android:layout_gravity="center"
+        android:src="@drawable/Workouts"
+        android:layout_marginTop="330dp"
+        android:layout_marginStart="80dp"
+        android:id="@+id/img3"
+        android:contentDescription="@string/workout_picture" />
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/today_s_workout2"
+        android:layout_gravity="bottom|center_horizontal"
+        android:layout_marginTop="345dp"
+        android:textSize="20sp"
+        android:textStyle="bold"
+        android:layout_marginStart="170dp"
+
+        />
+    <com.google.android.material.card.MaterialCardView
+        android:id="@+id/Weight"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_margin="5dp"
+        android:clickable="true"
+        android:focusable="true"
+        app:cardBackgroundColor="@android:color/white"
+        app:cardCornerRadius="60dp"
+        app:cardElevation="3dp"
+        />
+
+    <androidx.cardview.widget.CardView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="70dp"
+        android:layout_marginTop="460dp"
+        android:layout_marginEnd="70dp"
+        android:layout_marginBottom="70dp"
+        app:cardBackgroundColor="@color/white"
+        app:cardCornerRadius="20dp"
+        app:cardElevation="10dp"
+        app:cardMaxElevation="25dp"
+        app:cardPreventCornerOverlap="true"
+        app:cardUseCompatPadding="true" />
+    <ImageView
+        android:layout_width="75dp"
+        android:layout_height="75dp"
+        android:layout_gravity="center"
+        android:src="@drawable/Scale"
+        android:layout_marginTop="460dp"
+        android:layout_marginStart="80dp"
+        android:id="@+id/img4"
+        android:contentDescription="@string/scale_picture" />
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/current_weight2"
+        android:layout_gravity="bottom|center_horizontal"
+        android:layout_marginTop="475dp"
+        android:textSize="20sp"
+        android:textStyle="bold"
+        android:layout_marginStart="170dp"
+
+        />
+
+    <com.google.android.material.bottomnavigation.BottomNavigationView
+        android:id="@+id/bottom_nav"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true"
+        android:background="?android:attr/windowBackground"
+        app:menu="@menu/bottom_nav" />
+
+</RelativeLayout>

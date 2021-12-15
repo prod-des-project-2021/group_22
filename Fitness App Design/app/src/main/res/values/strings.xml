@@ -1,0 +1,36 @@
+<resources>
+    <string name="app_name">wooork</string>
+    <string name="home">Home</string>
+    <string name="profile">Profile</string>
+    <string name="workout">Workout Schedule</string>
+    <string name="nutrition">Nutritent Calculator</string>
+    <string name="name">Name</string>
+    <string name="ideal_weight">Ideal Weight</string>
+    <string name="bmi">BMI</string>
+    <string name="bmi_result">BMI result</string>
+    <string name="profile_fragment">Profile Fragment</string>
+    <string name="calories_needed">Calories needed</string>
+    <string name="daily_calories">Daily Calories</string>
+    <string name="water_intake">Water Intake</string>
+    <string name="current_weight">Current Weight</string>
+    <string name="logo">Logo</string>
+    <string name="water_pictogram">Water pictogram</string>
+    <string name="scale_pictogram">Scale Pictogram</string>
+    <string name="calories_left_for_today">Calories Left for Today</string>
+    <string name="workout_diary">Workout Diary</string>
+    <string name="nutrition_diary">Nutrition Diary</string>
+    <string name="today_s_workout">Today\'s Workout</string>
+    <string name="water_picture">Water Picture</string>
+    <string name="water_needed">Water needed:</string>
+    <string name="eating_picture">Eating Picture</string>
+    <string name="calories_left">Calories Left</string>
+    <string name="food_picture">Food Picture</string>
+    <string name="workout_picture">Workout Picture</string>
+    <string name="current_weight2">Current Weight:</string>
+    <string name="scale_picture">Scale Picture</string>
+    <string name="today_s_workout2">Today\'s Workout:</string>
+    <string name="buton_start">Buton Start</string>
+    <string name="application_title">Application Title</string>
+    <string name="logo">Logo</string>
+    <string name="button_start">Button Start</string>
+</resources>
