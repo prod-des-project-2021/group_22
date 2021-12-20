@@ -1,0 +1,54 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:padding="16dp">
+
+    <EditText
+        android:id="@+id/foodname"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:hint="Food Name" />
+
+    <EditText
+        android:id="@+id/calories"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:hint="Calories"
+        android:layout_marginTop="50dp"
+         />
+
+    <EditText
+        android:id="@+id/proteins"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:hint="Proteins(gr)"
+        android:layout_marginTop="100dp"
+         />
+
+    <EditText
+        android:id="@+id/carbs"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:hint="Carbs(gr)"
+        android:layout_marginTop="150dp"
+         />
+
+    <EditText
+        android:id="@+id/fats"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:hint="Fats(gr)"
+        android:layout_marginTop="200dp"
+        />
+
+    <EditText
+        android:id="@+id/fibers"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:hint="Fibers(gr)"
+        android:layout_marginTop="250dp"
+        />
+
+
+</RelativeLayout>
