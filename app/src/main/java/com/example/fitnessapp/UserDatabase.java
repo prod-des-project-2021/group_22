@@ -26,6 +26,13 @@ public class UserDatabase extends SQLiteOpenHelper {
     private static final String COLUMN_GOAL = "user_goal";
     private static final String COLUMN_BODY_TYPE = "user_body_type";
     private static final String COLUMN_ACTIVITY = "user_activity";
+    private static final String COLUMN_TOTAL_CALS = "user_cals_needed";
+    private static final String COLUMN_IDEAL = "user_ideal_kg";
+    private static final String COLUMN_BMI= "user_bmi";
+    private static final String COLUMN_RES_BMI= "user_res_bmi";
+    private static final String COLUMN_KG_GOAL= "user_kg_Goal";
+    private static final String COLUMN_L_ADDED = "user_L_added";
+    private static final String COLUMN_CALS_ADDED = "user_cals_added";
 
 
     public UserDatabase(@Nullable Context context) {
@@ -44,7 +51,14 @@ public class UserDatabase extends SQLiteOpenHelper {
                        COLUMN_SEX + " TEXT, " +
                        COLUMN_GOAL + " TEXT, " +
                        COLUMN_BODY_TYPE + " TEXT, " +
-                       COLUMN_ACTIVITY + " TEXT)";
+                       COLUMN_ACTIVITY + " TEXT, " +
+                       COLUMN_TOTAL_CALS + " TEXT, " +
+                       COLUMN_IDEAL + " TEXT, " +
+                       COLUMN_BMI + " TEXT, " +
+                       COLUMN_RES_BMI + " TEXT, " +
+                       COLUMN_KG_GOAL + " TEXT, " +
+                       COLUMN_L_ADDED + " TEXT, " +
+                       COLUMN_CALS_ADDED + " TEXT)";
         db.execSQL(query);
 
     }
@@ -110,6 +124,57 @@ public class UserDatabase extends SQLiteOpenHelper {
         ContentValues cv = new ContentValues();
         Cursor cursor = db.rawQuery("SELECT * FROM " + TABLE_NAME + " WHERE " + COLUMN_NAME + " = ?", new String[]{name});
         cv.put(COLUMN_ACTIVITY, activity);
+        if(cursor.getCount()>0)
+        {
+            db.update(TABLE_NAME, cv,COLUMN_NAME +"=?",new String[]{name});
+        }
+    }
+
+    public void addCalsIdealBMIRES(String name,String calories, String ideal, String bmi, String res_bmi)
+    {
+        SQLiteDatabase db = this.getWritableDatabase();
+        ContentValues cv = new ContentValues();
+        Cursor cursor = db.rawQuery("SELECT * FROM " + TABLE_NAME + " WHERE " + COLUMN_NAME + " = ?", new String[]{name});
+        cv.put(COLUMN_TOTAL_CALS, calories);
+        cv.put(COLUMN_IDEAL, ideal);
+        cv.put(COLUMN_BMI, bmi);
+        cv.put(COLUMN_RES_BMI, res_bmi);
+        if(cursor.getCount()>0)
+        {
+            db.update(TABLE_NAME, cv,COLUMN_NAME +"=?",new String[]{name});
+        }
+    }
+
+    public void addKgGoal(String name,String new_kg)
+    {
+        SQLiteDatabase db = this.getWritableDatabase();
+        ContentValues cv = new ContentValues();
+        Cursor cursor = db.rawQuery("SELECT * FROM " + TABLE_NAME + " WHERE " + COLUMN_NAME + " = ?", new String[]{name});
+        cv.put(COLUMN_KG_GOAL, new_kg);
+        if(cursor.getCount()>0)
+        {
+            db.update(TABLE_NAME, cv,COLUMN_NAME +"=?",new String[]{name});
+        }
+    }
+
+    public void addL(String name,String l)
+    {
+        SQLiteDatabase db = this.getWritableDatabase();
+        ContentValues cv = new ContentValues();
+        Cursor cursor = db.rawQuery("SELECT * FROM " + TABLE_NAME + " WHERE " + COLUMN_NAME + " = ?", new String[]{name});
+        cv.put(COLUMN_L_ADDED, l);
+        if(cursor.getCount()>0)
+        {
+            db.update(TABLE_NAME, cv,COLUMN_NAME +"=?",new String[]{name});
+        }
+    }
+
+    public void addCals(String name,String cals)
+    {
+        SQLiteDatabase db = this.getWritableDatabase();
+        ContentValues cv = new ContentValues();
+        Cursor cursor = db.rawQuery("SELECT * FROM " + TABLE_NAME + " WHERE " + COLUMN_NAME + " = ?", new String[]{name});
+        cv.put(COLUMN_CALS_ADDED, cals);
         if(cursor.getCount()>0)
         {
             db.update(TABLE_NAME, cv,COLUMN_NAME +"=?",new String[]{name});
@@ -193,6 +258,7 @@ public class UserDatabase extends SQLiteOpenHelper {
         }
 
     }
+
 
 
 

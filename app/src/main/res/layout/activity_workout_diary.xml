@@ -1,30 +1,21 @@
 <?xml version="1.0" encoding="utf-8"?>
-<androidx.constraintlayout.widget.ConstraintLayout
+<RelativeLayout
     xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".WorkoutDiary">
+    tools:context=".WorkoutDiary"
+    android:background="@drawable/claudiu"
+    android:padding="10dp">
 
-    <com.google.android.material.floatingactionbutton.FloatingActionButton
-        android:id="@+id/addbutton"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginEnd="48dp"
-        android:layout_marginBottom="48dp"
-        android:clickable="true"
-        android:focusable="true"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:srcCompat="@drawable/ic_add"
-        tools:ignore="SpeakableTextPresentCheck" />
 
     <androidx.recyclerview.widget.RecyclerView
         android:id="@+id/recyclerview"
-        android:paddingTop="70dp"
         android:layout_width="409dp"
         android:layout_height="729dp"
+        android:paddingTop="70dp"
+        android:paddingBottom="70dp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
@@ -37,63 +28,35 @@
         android:id="@+id/relativeLayout"
         android:layout_width="match_parent"
         android:layout_height="?actionBarSize"
-        android:background="@color/purple_500"
-        tools:ignore="MissingConstraints">
+        android:background="@drawable/white_button"
+        tools:ignore="MissingConstraints"
+        >
 
         <ImageButton
             android:id="@+id/deleteallbtn"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:background="@color/purple_500"
-            android:clickable="true"
+            android:layout_marginLeft="325dp"
             android:layout_marginTop="7dp"
+            android:background="?selectableItemBackground"
+            android:clickable="true"
             android:minWidth="39dp"
             android:minHeight="40dp"
             android:src="@drawable/ic_delete"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toTopOf="parent"
-            tools:ignore="MissingConstraints,SpeakableTextPresentCheck" />
+            tools:ignore="MissingConstraints,SpeakableTextPresentCheck,TouchTargetSizeCheck" />
 
 
         <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_alignParentStart="true"
-            android:layout_marginLeft="40dp"
+            android:layout_marginLeft="20dp"
             android:layout_marginTop="15dp"
-            android:text="Order"
+            android:text="Workout Diary"
             android:textColor="@color/white"
-            android:textSize="18sp" />
-
-        <TextView
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_alignParentStart="true"
-            android:layout_marginLeft="100dp"
-            android:layout_marginTop="15dp"
-            android:text="Name Of Exercises"
-            android:textColor="@color/white"
-            android:textSize="18sp" />
-
-        <TextView
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_alignParentStart="true"
-            android:layout_marginLeft="280dp"
-            android:layout_marginTop="15dp"
-            android:text="Sets"
-            android:textColor="@color/white"
-            android:textSize="18sp" />
-
-        <TextView
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_alignParentStart="true"
-            android:layout_marginLeft="330dp"
-            android:layout_marginTop="15dp"
-            android:text="Reps"
-            android:textColor="@color/white"
-            android:textSize="18sp" />
+            android:textSize="20sp" />
 
 
     </RelativeLayout>
@@ -104,28 +67,49 @@
         android:id="@+id/imageView"
         android:layout_width="164dp"
         android:layout_height="197dp"
-        android:alpha="0.1"
-        app:layout_constraintBottom_toBottomOf="@+id/recyclerview"
-        app:layout_constraintEnd_toEndOf="@+id/recyclerview"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/relativeLayout"
-        app:layout_constraintVertical_bias="0.318"
+        android:alpha="0.2"
         app:srcCompat="@drawable/ic_empty_24"
-        android:visibility="gone"/>
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="200dp"
+        android:visibility="gone"
+        />
 
     <TextView
         android:id="@+id/nodata"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:alpha="0.4"
-        android:text="   No Exercises"
-        android:textSize="20sp"
-        app:layout_constraintBottom_toBottomOf="@+id/recyclerview"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/relativeLayout"
-        app:layout_constraintVertical_bias="0.531"
-        tools:ignore="MissingConstraints"
+        android:text="No Exercises"
+        android:textColor="@color/white"
+        android:textSize="25sp"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="375dp"
         android:visibility="gone"/>
 
-</androidx.constraintlayout.widget.ConstraintLayout>
+    <com.google.android.material.floatingactionbutton.FloatingActionButton
+        android:id="@+id/addbutton"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="268dp"
+        android:layout_marginTop="550dp"
+        android:layout_marginEnd="48dp"
+        android:layout_marginBottom="48dp"
+        android:clickable="true"
+        android:focusable="true"
+        app:backgroundTint="@color/purple_500"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:maxImageSize="35dp"
+        app:srcCompat="@drawable/ic_add"
+        app:tint="#EEE"
+        tools:ignore="SpeakableTextPresentCheck" />
+
+    <com.google.android.material.bottomnavigation.BottomNavigationView
+        android:id="@+id/bottom_nav"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true"
+        android:background="?android:attr/windowBackground"
+        app:menu="@menu/bottom_nav" />
+
+</RelativeLayout>

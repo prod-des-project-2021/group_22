@@ -59,7 +59,7 @@ public class Questionnaire4 extends AppCompatActivity {
 
                     db.addActivity(name,activity);
 
-                    openProfileMainPage();
+                    openQuestionnaire5();
                     finish();
 
 
@@ -67,14 +67,16 @@ public class Questionnaire4 extends AppCompatActivity {
             }
         });
     }
+    public void openQuestionnaire5()
+    {
+        Intent intent = new Intent(this, Questionaire5.class);
+        startActivity(intent);
+        overridePendingTransition(0,0);
+    }
     public void openQuestionnaire3()
     {
         Intent intent = new Intent(this, Questionnaire3.class);
         startActivity(intent);
-    }
-    public void openProfileMainPage()
-    {
-        Intent intent = new Intent(this, ProfileMainPage.class);
-        startActivity(intent);
+        overridePendingTransition(0,0);
     }
 }

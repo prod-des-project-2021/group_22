@@ -5,45 +5,46 @@ import androidx.appcompat.app.AppCompatActivity;
 import android.content.Intent;
 import android.database.Cursor;
 import android.os.Bundle;
+import android.text.Editable;
 import android.view.View;
 import android.widget.Button;
+import android.widget.EditText;
 import android.widget.RadioButton;
 import android.widget.RadioGroup;
 import android.widget.Toast;
 
-public class Questionnaire2 extends AppCompatActivity {
-
+public class Questionaire5 extends AppCompatActivity {
     Button back,next;
-    RadioGroup rg;
-    RadioButton rb;
     UserDatabase db;
+    EditText goalkg;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_questionnaire2);
+        setContentView(R.layout.activity_questionaire5);
+
 
         back = (Button) findViewById(R.id.backbtn);
         next = (Button) findViewById(R.id.nextbtn);
-        rg = (RadioGroup)findViewById(R.id.radiogroup);
+        goalkg= (EditText) findViewById(R.id.kggoal);
         db = new UserDatabase(this);
 
         back.setOnClickListener(new View.OnClickListener() {
             @Override
-            public void onClick(View v)
-            {
-                openStart();
+            public void onClick(View v) {
+                openQuestionnaire4();
                 finish();
             }
         });
 
         next.setOnClickListener(new View.OnClickListener() {
             @Override
-            public void onClick(View v)
-            {
-                if(rg.getCheckedRadioButtonId()== -1 )
+            public void onClick(View v) {
+
+                String goalkgTXT = goalkg.getText().toString().trim();
+                if(goalkgTXT.matches("") )
                 {
-                    Toast.makeText(Questionnaire2.this, "Please Select Your Goal!", Toast.LENGTH_SHORT).show();
+                    Toast.makeText(Questionaire5.this, "Please Add Your Kg Goal", Toast.LENGTH_SHORT).show();
                 }
                 else
                 {
@@ -55,29 +56,26 @@ public class Questionnaire2 extends AppCompatActivity {
                     }
                     String name = buffer.toString();
 
-                    int id = rg.getCheckedRadioButtonId();
-                    rb = (RadioButton)findViewById(id);
-                    String goal = String.valueOf(rb.getText());
-
-                    db.addGoal(name,goal);
-
-                    openQuestionnaire3();
+                    db.addKgGoal(name,goalkgTXT);
+                    openDashboard();
                     finish();
+
+
                 }
             }
         });
     }
-    public void openStart()
-    {
-        Intent intent = new Intent(this, StartActivity.class);
-        startActivity(intent);
-        overridePendingTransition(0,0);
-    }
-    public void openQuestionnaire3()
-    {
-        Intent intent = new Intent(this, Questionnaire3.class);
-        startActivity(intent);
-        overridePendingTransition(0,0);
-    }
 
+    public void openQuestionnaire4()
+    {
+        Intent intent = new Intent(this, Questionnaire4.class);
+        startActivity(intent);
+        overridePendingTransition(0,0);
+    }
+    public void openDashboard()
+    {
+        Intent intent = new Intent(this, Dashboard.class);
+        startActivity(intent);
+        overridePendingTransition(0,0);
+    }
 }

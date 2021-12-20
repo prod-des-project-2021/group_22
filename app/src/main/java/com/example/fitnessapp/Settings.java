@@ -19,12 +19,16 @@ import android.widget.RadioGroup;
 import android.widget.TextView;
 import android.widget.Toast;
 
+import java.text.DecimalFormat;
+
 public class Settings extends AppCompatActivity {
     ImageButton back;
-    TextView name,age,height,weight,sex,goal,body,activity;
+    TextView name,age,height,weight,sex,goal,body,activity,goalkg;
     UserDatabase db;
-    CardView name_tab,age_tab,height_tab,weight_tab,sex_tab,goal_tab,body_tab,activity_tab;
+    CardView name_tab,age_tab,height_tab,weight_tab,sex_tab,goal_tab,body_tab,activity_tab,goalkg_tab;
     String goalseditTXT, bodyeditTXT, activityeditTXT;
+    int calories;
+    DecimalFormat df;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -39,6 +43,8 @@ public class Settings extends AppCompatActivity {
         goal = findViewById(R.id.goal_edit);
         body = findViewById(R.id.bodytype_edit);
         activity = findViewById(R.id.activity_edit);
+        goalkg = findViewById(R.id.kggoal_edit);
+
         name_tab = findViewById(R.id.name_tab);
         age_tab = findViewById(R.id.age_tab);
         height_tab = findViewById(R.id.height_tab);
@@ -47,7 +53,9 @@ public class Settings extends AppCompatActivity {
         goal_tab = findViewById(R.id.goal_tab);
         body_tab = findViewById(R.id.body_tab);
         activity_tab = findViewById(R.id.activity_tab);
+        goalkg_tab = findViewById(R.id.kggoaltab);
         db = new UserDatabase(this);
+        df = new DecimalFormat("0.00");
 
         Cursor res = db.getdata();
         StringBuffer buffer0 = new StringBuffer();
@@ -58,6 +66,7 @@ public class Settings extends AppCompatActivity {
         StringBuffer buffer5 = new StringBuffer();
         StringBuffer buffer6 = new StringBuffer();
         StringBuffer buffer7 = new StringBuffer();
+        StringBuffer buffer12 = new StringBuffer();
 
         while (res.moveToNext())
         {
@@ -69,6 +78,7 @@ public class Settings extends AppCompatActivity {
             buffer5.append(res.getString(5));
             buffer6.append(res.getString(6));
             buffer7.append(res.getString(7));
+            buffer12.append(res.getString(12));
         }
 
         String nameTXT = buffer0.toString();
@@ -79,6 +89,7 @@ public class Settings extends AppCompatActivity {
         String goalTXT= buffer5.toString();
         String body_typeTXT = buffer6.toString();
         String activityTXT = buffer7.toString();
+        String goalkgTXT = buffer12.toString();
 
         name.setText(nameTXT);
         age.setText(ageTXT);
@@ -88,6 +99,93 @@ public class Settings extends AppCompatActivity {
         goal.setText(goalTXT);
         body.setText(body_typeTXT);
         activity.setText(activityTXT);
+        goalkg.setText(goalkgTXT+"kg");
+
+        float age = Integer.parseInt(ageTXT);
+        float height = Integer.parseInt(heightTXT);
+        int weight = Integer.parseInt(weightTXT);
+
+
+        height = height/100;
+        float bmical = weight/(height*height);
+        String bmiTXT = String.valueOf(df.format(bmical));
+
+        String resTXT = null;
+        float ideal_kg = 0;
+
+        if (bmical < 18.6)
+            resTXT = "Underweight";
+        else if (bmical > 18.6 && bmical < 24.9)
+            resTXT = "Normal";
+        else if (bmical > 24.9 && bmical < 29.9)
+            resTXT = "Overweight";
+        else if (bmical > 29.9)
+            resTXT = "Obese";
+
+
+        if (body_typeTXT.matches("Endomorph") && goalTXT.matches("Lose Weight"))
+            calories = weight*22;
+        else if (body_typeTXT.matches("Mesomorph") && goalTXT.matches("Lose Weight"))
+            calories = weight*24;
+        else if (body_typeTXT.matches("Ectomorph") && goalTXT.matches("Lose Weight"))
+            calories = weight*26;
+        else if (body_typeTXT.matches("Endomorph") && goalTXT.matches("Gain Muscle Mass"))
+            calories = weight*29;
+        else if (body_typeTXT.matches("Mesomorph") && goalTXT.matches("Gain Muscle Mass"))
+            calories = weight*31;
+        else if (body_typeTXT.matches("Ectomorph") && goalTXT.matches("Gain Muscle Mass"))
+            calories = weight*33;
+        else if (body_typeTXT.matches("Endomorph") && goalTXT.matches("Gain Weight"))
+            calories = weight*35;
+        else if (body_typeTXT.matches("Mesomorph") && goalTXT.matches("Gain Weight"))
+            calories = weight*37;
+        else if (body_typeTXT.matches("Ectomorph") && goalTXT.matches("Gain Weight"))
+            calories = weight*39;
+
+        if (resTXT.matches("Overweight"))
+            calories = calories - 250;
+        else if (resTXT.matches("Obese"))
+            calories = calories - 500;
+        else if (resTXT.matches("Underweight"))
+            calories = calories + 500;
+
+
+        height = height*100;
+
+        if (sexTXT.matches("Male"))
+            ideal_kg = (height - 100 - ((height - 150)/4)) + ((age-20)/4) ;
+        else if (sexTXT.matches("Female"))
+            ideal_kg = (height - 100 - ((height - 150)/2)) + ((age-20)/2) ;
+
+        if(activityTXT.matches("Highly Active") && goalTXT.matches("Lose Weight"))
+        {
+            calories = calories + 300;
+        }
+        else if(activityTXT.matches("Moderate") && goalTXT.matches("Lose Weight"))
+        {
+            calories = calories +150;
+        }
+        else if(activityTXT.matches("Highly Active") && goalTXT.matches("Gain Muscle Mass"))
+        {
+            calories = calories + 300;
+        }
+        else if(activityTXT.matches("Moderate") && goalTXT.matches("Gain Muscle Mass"))
+        {
+            calories = calories + 150;
+        }
+        else if(activityTXT.matches("Highly Active") && goalTXT.matches("Gain Weight"))
+        {
+            calories = calories + 300;
+        }
+        else if(activityTXT.matches("Moderate") && goalTXT.matches("Gain Weight"))
+        {
+            calories = calories + 150;
+        }
+
+        String caloriesTXT = String.valueOf(calories);
+        String idealTXT = String.valueOf(df.format(ideal_kg));
+        db.addCalsIdealBMIRES(nameTXT,caloriesTXT,idealTXT,bmiTXT,resTXT);
+
 
 
         back.setOnClickListener(new View.OnClickListener() {
@@ -95,6 +193,7 @@ public class Settings extends AppCompatActivity {
             public void onClick(View v) {
                Intent intent = new Intent(Settings.this, ProfileMainPage.class);
                startActivity(intent);
+               overridePendingTransition(0,0);
                finish();
             }
         });
@@ -164,6 +263,15 @@ public class Settings extends AppCompatActivity {
             }
         });
 
+        goalkg_tab.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                openGoalKgDialog();
+            }
+        });
+
+
+
 
     }
 
@@ -203,7 +311,7 @@ public class Settings extends AppCompatActivity {
                     }
                     String namebufferTXT = buffername.toString();
                     db.editName(namebufferTXT,editnameTXT);
-                    name.setText(editnameTXT);
+                    reset();
 
 
                 }
@@ -253,7 +361,7 @@ public class Settings extends AppCompatActivity {
                     }
                     String namebufferTXT = bufferage.toString();
                     db.editAge(namebufferTXT,editageTXT);
-                    age.setText(editageTXT);
+                    reset();
 
 
                 }
@@ -302,7 +410,7 @@ public class Settings extends AppCompatActivity {
                     }
                     String namebufferTXT = bufferheight.toString();
                     db.editHeight(namebufferTXT,editheightTXT);
-                    height.setText(editheightTXT+"cm");
+                    reset();
 
 
                 }
@@ -349,7 +457,7 @@ public class Settings extends AppCompatActivity {
                     }
                     String namebufferTXT = buffername.toString();
                     db.editWeight(namebufferTXT,editweightTXT);
-                    weight.setText(editweightTXT+"kg");
+                    reset();
 
                 }
             }
@@ -395,7 +503,7 @@ public class Settings extends AppCompatActivity {
                 }
                 String namebufferTXT = buffername.toString();
                 db.editSex(namebufferTXT,editsexTXT);
-                sex.setText(editsexTXT);
+                reset();
 
             }
         });
@@ -443,7 +551,7 @@ public class Settings extends AppCompatActivity {
 
                     String namebufferTXT = buffername.toString();
                     db.addGoal(namebufferTXT,goalseditTXT);
-                    goal.setText(goalseditTXT);
+                    reset();
                 }
                 else
                 {
@@ -496,7 +604,7 @@ public class Settings extends AppCompatActivity {
 
                     String namebufferTXT = buffername.toString();
                     db.addBodyType(namebufferTXT,bodyeditTXT);
-                    body.setText(bodyeditTXT);
+                    reset();
                 }
                 else
                 {
@@ -545,7 +653,7 @@ public class Settings extends AppCompatActivity {
 
                     String namebufferTXT = buffername.toString();
                     db.addActivity(namebufferTXT,activityeditTXT);
-                    activity.setText(activityeditTXT);
+                    reset();
                 }
                 else
                 {
@@ -557,6 +665,64 @@ public class Settings extends AppCompatActivity {
         dialog.show();
 
 
+    }
+
+
+    public void openGoalKgDialog()
+    {
+        EditText editgoalkg;
+        AlertDialog.Builder builder = new AlertDialog.Builder(Settings.this);
+        View view = getLayoutInflater().inflate(R.layout.goalkg_edit,null);
+        builder.setTitle("Edit Name");
+        editgoalkg = view.findViewById(R.id.edit_goalkg);
+        builder.setNegativeButton("cancel", new DialogInterface.OnClickListener() {
+            @Override
+            public void onClick(DialogInterface dialog, int which)
+            {
+                dialog.dismiss();
+
+            }
+        });
+        builder.setPositiveButton("ok", new DialogInterface.OnClickListener() {
+            @Override
+            public void onClick(DialogInterface dialog, int which)
+            {
+                String editgoalkgTXT = editgoalkg.getText().toString().trim();
+                if(editgoalkgTXT.matches(""))
+                {
+                    Toast.makeText(Settings.this, "No Data Inserted", Toast.LENGTH_SHORT).show();
+                }
+                else
+                {
+
+                    Cursor resname = db.getdata();
+                    StringBuffer buffername = new StringBuffer();
+                    while (resname.moveToNext())
+                    {
+                        buffername.append(resname.getString(0));
+
+                    }
+                    String namebufferTXT = buffername.toString();
+                    db.addKgGoal(namebufferTXT,editgoalkgTXT);
+                    reset();
+
+
+                }
+            }
+        });
+
+        builder.setView(view);
+        AlertDialog dialog = builder.create();
+        dialog.show();
+
+    }
+
+    void reset()
+    {
+        Intent intent = new Intent(Settings.this, Settings.class);
+        startActivity(intent);
+        overridePendingTransition(0,0);
+        finish();
     }
 
 

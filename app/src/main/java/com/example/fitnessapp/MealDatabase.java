@@ -78,7 +78,7 @@ public class MealDatabase extends SQLiteOpenHelper {
         db.execSQL("DELETE FROM SQLITE_SEQUENCE WHERE NAME = '"+TABLE_NAME+"'");
     }
 
-    void deleteOneEx(String row_id)
+    void deleteOneMeal(String row_id)
     {
         SQLiteDatabase db = this.getWritableDatabase();
         long result = db.delete(TABLE_NAME, COLUMN_ID+ "=?", new String[]{row_id});
@@ -100,6 +100,19 @@ public class MealDatabase extends SQLiteOpenHelper {
         else
             Toast.makeText(context, "Successfully Updated", Toast.LENGTH_SHORT).show();
 
+
+    }
+
+    void updateCalories(String row_id, String cals){
+
+        SQLiteDatabase db = this.getWritableDatabase();
+        ContentValues cv = new ContentValues();
+        cv.put(COLUMN_CALS, cals);
+        long result = db.update(TABLE_NAME,cv,COLUMN_ID+"=?", new String[]{row_id});
+        if( result == -1 )
+            Toast.makeText(context, "Failed to Update", Toast.LENGTH_SHORT).show();
+        else
+            Toast.makeText(context, "Successfully Updated", Toast.LENGTH_SHORT).show();
 
     }
 

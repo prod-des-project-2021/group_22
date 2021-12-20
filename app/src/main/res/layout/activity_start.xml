@@ -5,7 +5,8 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:padding="20dp"
+    android:background="@drawable/claudiu"
+    android:padding="40dp"
     tools:context=".StartActivity">
 
     <TextView
@@ -15,6 +16,8 @@
         android:text="Let's make your fitness profile"
         android:textAlignment="center"
         android:textSize="30dp"
+        android:textColor="@color/white"
+        android:textStyle="bold"
         android:layout_marginTop="30dp"
         />
     <EditText
@@ -23,9 +26,12 @@
         android:layout_height="wrap_content"
         android:hint="Name"
         android:textSize="24dp"
+        android:textColor="@color/white"
         android:layout_below="@+id/texttitle"
         android:inputType="textPersonName"
         android:layout_marginTop="30dp"
+        android:backgroundTint="@color/white"
+        android:textColorHint="@color/white"
         />
     <EditText
         android:id="@+id/age"
@@ -33,9 +39,12 @@
         android:layout_height="wrap_content"
         android:hint="Age"
         android:textSize="24dp"
+        android:textColor="@color/white"
         android:layout_below="@+id/name"
         android:inputType="number"
         android:layout_marginTop="10dp"
+        android:backgroundTint="@color/white"
+        android:textColorHint="@color/white"
         />
     <EditText
         android:id="@+id/height"
@@ -43,9 +52,12 @@
         android:layout_height="wrap_content"
         android:hint="Height(cm)"
         android:textSize="24dp"
+        android:textColor="@color/white"
         android:layout_below="@+id/age"
         android:inputType="number"
         android:layout_marginTop="10dp"
+        android:backgroundTint="@color/white"
+        android:textColorHint="@color/white"
         />
     <EditText
         android:id="@+id/weight"
@@ -55,8 +67,12 @@
         android:textSize="24dp"
         android:layout_below="@+id/height"
         android:inputType="number"
+        android:textColor="@color/white"
         android:layout_marginTop="10dp"
+        android:backgroundTint="@color/white"
+        android:textColorHint="@color/white"
         />
+
     <com.google.android.material.textfield.TextInputLayout
         style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox.ExposedDropdownMenu"
         android:layout_width="match_parent"
@@ -64,6 +80,7 @@
         android:layout_below="@id/weight"
         android:layout_marginTop="20dp"
         android:hint="Sex"
+        android:textColorHint="@color/white"
 
         >
 
@@ -74,17 +91,20 @@
             android:layout_weight="1"
             android:inputType="none"
             android:text="Female"
-            />
+            android:textColor="@color/white"
+            android:background="@color/white"/>
 
     </com.google.android.material.textfield.TextInputLayout>
-    <Button
+
+    <androidx.appcompat.widget.AppCompatButton
+        android:background="@drawable/button_made"
         android:id="@+id/nextbtn"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:textSize="24dp"
-        android:text="Next"
-        android:layout_marginTop="150dp"
         android:layout_below="@+id/weight"
-        />
+        android:layout_marginTop="150dp"
+        android:text="Next"
+        android:textSize="24dp"
+        android:textColor="@color/white"/>
 
 </RelativeLayout>

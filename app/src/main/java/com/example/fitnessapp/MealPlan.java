@@ -1,5 +1,6 @@
 package com.example.fitnessapp;
 
+import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
 import androidx.appcompat.app.AlertDialog;
 import androidx.appcompat.app.AppCompatActivity;
@@ -10,6 +11,7 @@ import android.content.DialogInterface;
 import android.content.Intent;
 import android.database.Cursor;
 import android.os.Bundle;
+import android.view.MenuItem;
 import android.view.View;
 import android.widget.EditText;
 import android.widget.ImageButton;
@@ -17,6 +19,7 @@ import android.widget.ImageView;
 import android.widget.TextView;
 import android.widget.Toast;
 
+import com.google.android.material.bottomnavigation.BottomNavigationView;
 import com.google.android.material.floatingactionbutton.FloatingActionButton;
 
 import java.util.ArrayList;
@@ -31,19 +34,55 @@ public class MealPlan extends AppCompatActivity {
     MealDatabase db;
     ArrayList<String> meal_id, meal_name, meal_calories;
     CustomAdapterMeal customAdapterMeal;
+    BottomNavigationView navigation;
+
+    @Override
+    protected void onActivityResult(int requestCode, int resultCode, @Nullable Intent data) {
+        super.onActivityResult(requestCode, resultCode, data);
+        if(requestCode == 1)
+        {
+            recreate();
+        }
+    }
 
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_meal_plan);
-
+        navigation = findViewById(R.id.bottom_nav);
         add = findViewById(R.id.addbuttonmeal);
         delete = findViewById(R.id.deleteallbtnmeal);
         recycleView = findViewById(R.id.recyclerviewmeal);
         db = new MealDatabase(MealPlan.this);
         no_data = findViewById(R.id.nodata1);
         img_empty = findViewById(R.id.imageView1);
+
+        navigation.setSelectedItemId(R.id.nav_eating);
+        navigation.setOnNavigationItemSelectedListener(new BottomNavigationView.OnNavigationItemSelectedListener() {
+            @Override
+            public boolean onNavigationItemSelected(@NonNull MenuItem item) {
+
+                switch (item.getItemId())
+                {
+                    case R.id.nav_profile:
+                        startActivity(new Intent(getApplicationContext(),ProfileMainPage.class));
+                        overridePendingTransition(0,0);
+                        return true;
+
+                    case R.id.nav_workout:
+                        startActivity(new Intent(getApplicationContext(),WorkoutDiary.class));
+                        overridePendingTransition(0,0);
+                        return true;
+
+                    case R.id.nav_home:
+                        startActivity(new Intent(getApplicationContext(),Dashboard.class));
+                        overridePendingTransition(0,0);
+                        return true;
+                }
+                return false;
+            }
+        });
 
         add.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -58,7 +97,7 @@ public class MealPlan extends AppCompatActivity {
 
         storemealsinArrays();
 
-        customAdapterMeal = new CustomAdapterMeal (MealPlan.this, meal_id, meal_name, meal_calories);
+        customAdapterMeal = new CustomAdapterMeal (MealPlan.this,this, meal_id, meal_name, meal_calories);
         recycleView.setAdapter(customAdapterMeal);
         recycleView.setLayoutManager(new LinearLayoutManager(MealPlan.this));
 
@@ -127,6 +166,7 @@ public class MealPlan extends AppCompatActivity {
                     db.addMeal(mealnameTXT, "0");
                     Intent intent = new Intent(MealPlan.this, MealPlan.class);
                     startActivity(intent);
+                    overridePendingTransition(0,0);
                     finish();
                 }
             }
@@ -151,6 +191,7 @@ public class MealPlan extends AppCompatActivity {
                 db.deleteall();
                 Intent intent = new Intent(MealPlan.this, MealPlan.class);
                 startActivity(intent);
+                overridePendingTransition(0,0);
                 finish();
 
             }

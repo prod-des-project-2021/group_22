@@ -5,7 +5,9 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     tools:context=".UpdateExercise"
-    android:orientation="vertical">
+    android:orientation="vertical"
+    android:background="@drawable/claudiu"
+    android:padding="10dp">
 
     <include layout="@layout/toolbar" />
     <include layout="@layout/updateexercises"/>

@@ -3,42 +3,68 @@
   <component name="DesignSurface">
     <option name="filePathToZoomLevelMap">
       <map>
+        <entry key="..\:/OAMK/Project Implementation/FitnessAPP/app/src/main/res/drawable-anydpi/ic_profile.xml" value="0.35833333333333334" />
         <entry key="..\:/OAMK/Project Implementation/FitnessAPP/app/src/main/res/drawable-anydpi/ic_settings.xml" value="0.3828125" />
+        <entry key="..\:/OAMK/Project Implementation/FitnessAPP/app/src/main/res/drawable-xhdpi/button_made.xml" value="0.1" />
+        <entry key="..\:/OAMK/Project Implementation/FitnessAPP/app/src/main/res/drawable-xxhdpi/ic_baseline_fitness_center_24.xml" value="0.1" />
+        <entry key="..\:/OAMK/Project Implementation/FitnessAPP/app/src/main/res/drawable-xxhdpi/ic_baseline_other_houses_24.xml" value="0.1" />
+        <entry key="..\:/OAMK/Project Implementation/FitnessAPP/app/src/main/res/drawable-xxhdpi/ic_baseline_person_24.xml" value="0.1" />
+        <entry key="..\:/OAMK/Project Implementation/FitnessAPP/app/src/main/res/drawable-xxhdpi/ic_baseline_restaurant_menu_24.xml" value="0.1" />
+        <entry key="..\:/OAMK/Project Implementation/FitnessAPP/app/src/main/res/drawable/button_made_editprofile.xml" value="0.3611111111111111" />
+        <entry key="..\:/OAMK/Project Implementation/FitnessAPP/app/src/main/res/drawable/circle.xml" value="0.1" />
+        <entry key="..\:/OAMK/Project Implementation/FitnessAPP/app/src/main/res/drawable/ic_add.xml" value="0.31296296296296294" />
+        <entry key="..\:/OAMK/Project Implementation/FitnessAPP/app/src/main/res/drawable/ic_body.xml" value="0.3828125" />
+        <entry key="..\:/OAMK/Project Implementation/FitnessAPP/app/src/main/res/drawable/ic_delete.xml" value="0.3828125" />
+        <entry key="..\:/OAMK/Project Implementation/FitnessAPP/app/src/main/res/drawable/ic_empty_24.xml" value="0.3828125" />
+        <entry key="..\:/OAMK/Project Implementation/FitnessAPP/app/src/main/res/drawable/ic_goal.xml" value="0.3828125" />
+        <entry key="..\:/OAMK/Project Implementation/FitnessAPP/app/src/main/res/drawable/ic_scale.xml" value="0.35833333333333334" />
+        <entry key="..\:/OAMK/Project Implementation/FitnessAPP/app/src/main/res/drawable/ic_user_profile_svgrepo_com.xml" value="0.125" />
+        <entry key="..\:/OAMK/Project Implementation/FitnessAPP/app/src/main/res/drawable/ic_water.xml" value="0.3828125" />
+        <entry key="..\:/OAMK/Project Implementation/FitnessAPP/app/src/main/res/drawable/ic_weight_svgrepo_com.xml" value="0.3828125" />
         <entry key="..\:/OAMK/Project Implementation/FitnessAPP/app/src/main/res/drawable/radio_normal.xml" value="0.21574074074074073" />
         <entry key="..\:/OAMK/Project Implementation/FitnessAPP/app/src/main/res/drawable/radio_selected.xml" value="0.21574074074074073" />
         <entry key="..\:/OAMK/Project Implementation/FitnessAPP/app/src/main/res/drawable/radio_selector.xml" value="0.21574074074074073" />
         <entry key="..\:/OAMK/Project Implementation/FitnessAPP/app/src/main/res/drawable/text_color.xml" value="0.21574074074074073" />
-        <entry key="..\:/OAMK/Project Implementation/FitnessAPP/app/src/main/res/layout/activity_dashboard.xml" value="0.33" />
+        <entry key="..\:/OAMK/Project Implementation/FitnessAPP/app/src/main/res/drawable/white_button.xml" value="0.3101851851851852" />
+        <entry key="..\:/OAMK/Project Implementation/FitnessAPP/app/src/main/res/layout/activity_dashboard.xml" value="0.5" />
         <entry key="..\:/OAMK/Project Implementation/FitnessAPP/app/src/main/res/layout/activity_edit.xml" value="0.36666666666666664" />
-        <entry key="..\:/OAMK/Project Implementation/FitnessAPP/app/src/main/res/layout/activity_main.xml" value="0.2" />
-        <entry key="..\:/OAMK/Project Implementation/FitnessAPP/app/src/main/res/layout/activity_meal_plan.xml" value="0.25" />
+        <entry key="..\:/OAMK/Project Implementation/FitnessAPP/app/src/main/res/layout/activity_main.xml" value="0.22" />
+        <entry key="..\:/OAMK/Project Implementation/FitnessAPP/app/src/main/res/layout/activity_meal_plan.xml" value="0.28377065111758987" />
         <entry key="..\:/OAMK/Project Implementation/FitnessAPP/app/src/main/res/layout/activity_profile_main_page.xml" value="0.33" />
+        <entry key="..\:/OAMK/Project Implementation/FitnessAPP/app/src/main/res/layout/activity_questionaire5.xml" value="0.36666666666666664" />
         <entry key="..\:/OAMK/Project Implementation/FitnessAPP/app/src/main/res/layout/activity_questionnaire2.xml" value="0.33" />
         <entry key="..\:/OAMK/Project Implementation/FitnessAPP/app/src/main/res/layout/activity_questionnaire3.xml" value="0.33" />
         <entry key="..\:/OAMK/Project Implementation/FitnessAPP/app/src/main/res/layout/activity_questionnaire4.xml" value="0.33" />
         <entry key="..\:/OAMK/Project Implementation/FitnessAPP/app/src/main/res/layout/activity_settings.xml" value="0.33" />
-        <entry key="..\:/OAMK/Project Implementation/FitnessAPP/app/src/main/res/layout/activity_start.xml" value="0.25" />
+        <entry key="..\:/OAMK/Project Implementation/FitnessAPP/app/src/main/res/layout/activity_start.xml" value="0.33" />
         <entry key="..\:/OAMK/Project Implementation/FitnessAPP/app/src/main/res/layout/activity_update_exercise.xml" value="0.3125" />
         <entry key="..\:/OAMK/Project Implementation/FitnessAPP/app/src/main/res/layout/activity_update_meal.xml" value="0.17831813576494426" />
-        <entry key="..\:/OAMK/Project Implementation/FitnessAPP/app/src/main/res/layout/activity_workout_diary.xml" value="0.4085896691816599" />
+        <entry key="..\:/OAMK/Project Implementation/FitnessAPP/app/src/main/res/layout/activity_workout_diary.xml" value="0.31533477321814257" />
+        <entry key="..\:/OAMK/Project Implementation/FitnessAPP/app/src/main/res/layout/add_food.xml" value="0.36666666666666664" />
+        <entry key="..\:/OAMK/Project Implementation/FitnessAPP/app/src/main/res/layout/add_quick_calories.xml" value="0.36666666666666664" />
+        <entry key="..\:/OAMK/Project Implementation/FitnessAPP/app/src/main/res/layout/add_water.xml" value="0.36666666666666664" />
         <entry key="..\:/OAMK/Project Implementation/FitnessAPP/app/src/main/res/layout/age_edit.xml" value="0.36666666666666664" />
         <entry key="..\:/OAMK/Project Implementation/FitnessAPP/app/src/main/res/layout/body_edit.xml" value="0.2191780821917808" />
         <entry key="..\:/OAMK/Project Implementation/FitnessAPP/app/src/main/res/layout/data.xml" value="0.25" />
         <entry key="..\:/OAMK/Project Implementation/FitnessAPP/app/src/main/res/layout/data2.xml" value="0.33" />
         <entry key="..\:/OAMK/Project Implementation/FitnessAPP/app/src/main/res/layout/dropdown_item.xml" value="0.67" />
         <entry key="..\:/OAMK/Project Implementation/FitnessAPP/app/src/main/res/layout/exercise_add.xml" value="0.36666666666666664" />
-        <entry key="..\:/OAMK/Project Implementation/FitnessAPP/app/src/main/res/layout/exercise_row.xml" value="0.1" />
+        <entry key="..\:/OAMK/Project Implementation/FitnessAPP/app/src/main/res/layout/exercise_row.xml" value="0.33" />
         <entry key="..\:/OAMK/Project Implementation/FitnessAPP/app/src/main/res/layout/goal_edit.xml" value="0.36666666666666664" />
+        <entry key="..\:/OAMK/Project Implementation/FitnessAPP/app/src/main/res/layout/goalkg_edit.xml" value="0.36666666666666664" />
         <entry key="..\:/OAMK/Project Implementation/FitnessAPP/app/src/main/res/layout/height_edit.xml" value="0.36666666666666664" />
         <entry key="..\:/OAMK/Project Implementation/FitnessAPP/app/src/main/res/layout/list_item.xml" value="0.25" />
         <entry key="..\:/OAMK/Project Implementation/FitnessAPP/app/src/main/res/layout/meal_add.xml" value="0.36666666666666664" />
-        <entry key="..\:/OAMK/Project Implementation/FitnessAPP/app/src/main/res/layout/meal_row.xml" value="0.5" />
+        <entry key="..\:/OAMK/Project Implementation/FitnessAPP/app/src/main/res/layout/meal_name_edit.xml" value="0.22" />
+        <entry key="..\:/OAMK/Project Implementation/FitnessAPP/app/src/main/res/layout/meal_row.xml" value="0.19662921348314608" />
         <entry key="..\:/OAMK/Project Implementation/FitnessAPP/app/src/main/res/layout/name_edit.xml" value="0.34193840579710144" />
         <entry key="..\:/OAMK/Project Implementation/FitnessAPP/app/src/main/res/layout/sex_edit.xml" value="0.36666666666666664" />
         <entry key="..\:/OAMK/Project Implementation/FitnessAPP/app/src/main/res/layout/toolbar.xml" value="0.33" />
         <entry key="..\:/OAMK/Project Implementation/FitnessAPP/app/src/main/res/layout/toolbarforupdate.xml" value="0.36666666666666664" />
         <entry key="..\:/OAMK/Project Implementation/FitnessAPP/app/src/main/res/layout/updateexercises.xml" value="0.36666666666666664" />
         <entry key="..\:/OAMK/Project Implementation/FitnessAPP/app/src/main/res/layout/weight_edit.xml" value="0.36666666666666664" />
+        <entry key="..\:/OAMK/Project Implementation/FitnessAPP/app/src/main/res/menu/bottom_nav.xml" value="0.33" />
+        <entry key="..\:/OAMK/Project Implementation/FitnessAPP/app/src/main/res/menu/popup_meal.xml" value="0.1" />
       </map>
     </option>
   </component>

@@ -1,0 +1,62 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@drawable/claudiu"
+    android:padding="40dp"
+    tools:context=".Questionaire5">
+
+    <TextView
+        android:id="@+id/texttitle"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="What is your KG goal ?"
+        android:textAlignment="center"
+        android:textSize="30dp"
+        android:textColor="@color/white"
+        android:textStyle="bold"
+        android:layout_marginTop="30dp"
+        />
+
+    <EditText
+        android:id="@+id/kggoal"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:hint="Kg Goal"
+        android:textSize="24sp"
+        android:textColor="@color/white"
+        android:layout_below="@+id/texttitle"
+        android:inputType="textPersonName"
+        android:layout_marginTop="150dp"
+        android:backgroundTint="@color/white"
+        android:textColorHint="@color/white"
+        />
+
+
+    <androidx.appcompat.widget.AppCompatButton
+        android:id="@+id/nextbtn"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/kggoal"
+        android:layout_marginTop="205dp"
+        android:text="Next"
+        android:textSize="24dp"
+        android:textColor="@color/white"
+        android:background="@drawable/button_made"
+        />
+    <androidx.appcompat.widget.AppCompatButton
+        android:id="@+id/backbtn"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:textSize="24dp"
+        android:text="Back"
+        android:textColor="@color/white"
+        android:layout_marginTop="10dp"
+        android:layout_below="@+id/nextbtn"
+        android:background="@drawable/button_made"
+        />
+
+</RelativeLayout>

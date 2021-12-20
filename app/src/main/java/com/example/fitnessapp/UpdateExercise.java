@@ -44,6 +44,7 @@ public class UpdateExercise extends AppCompatActivity {
             public void onClick(View v) {
                 Intent intent = new Intent(UpdateExercise.this,WorkoutDiary.class);
                 startActivity(intent);
+                overridePendingTransition(0,0);
                 finish();
             }
         });
@@ -104,6 +105,9 @@ public class UpdateExercise extends AppCompatActivity {
             public void onClick(DialogInterface dialog, int which) {
                 WorkoutDatabase db = new WorkoutDatabase(UpdateExercise.this);
                 db.deleteOneEx(id);
+                Intent intent = new Intent(UpdateExercise.this,WorkoutDiary.class);
+                startActivity(intent);
+                overridePendingTransition(0,0);
                 finish();
 
             }

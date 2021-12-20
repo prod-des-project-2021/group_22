@@ -72,11 +72,13 @@ public class Questionnaire3 extends AppCompatActivity {
     {
         Intent intent = new Intent(this, Questionnaire2.class);
         startActivity(intent);
+        overridePendingTransition(0,0);
     }
 
     public void openQuestionnaire4()
     {
         Intent intent = new Intent(this, Questionnaire4.class);
         startActivity(intent);
+        overridePendingTransition(0,0);
     }
 }

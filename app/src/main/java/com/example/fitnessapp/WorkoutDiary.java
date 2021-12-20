@@ -1,5 +1,6 @@
 package com.example.fitnessapp;
 
+import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
 import androidx.appcompat.app.AlertDialog;
 import androidx.appcompat.app.AppCompatActivity;
@@ -10,6 +11,7 @@ import android.content.DialogInterface;
 import android.content.Intent;
 import android.database.Cursor;
 import android.os.Bundle;
+import android.view.MenuItem;
 import android.view.View;
 import android.widget.EditText;
 import android.widget.ImageButton;
@@ -17,6 +19,7 @@ import android.widget.ImageView;
 import android.widget.TextView;
 import android.widget.Toast;
 
+import com.google.android.material.bottomnavigation.BottomNavigationView;
 import com.google.android.material.floatingactionbutton.FloatingActionButton;
 
 import java.util.ArrayList;
@@ -31,6 +34,7 @@ public class WorkoutDiary extends AppCompatActivity {
     WorkoutDatabase db;
     ArrayList<String> ex_id, ex_name, ex_sets, ex_reps;
     CustomAdapterExercises customAdapterExercises;
+    BottomNavigationView navigation;
 
     @Override
     protected void onActivityResult(int requestCode, int resultCode, @Nullable Intent data) {
@@ -40,6 +44,7 @@ public class WorkoutDiary extends AppCompatActivity {
             recreate();
         }
     }
+
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -52,6 +57,35 @@ public class WorkoutDiary extends AppCompatActivity {
         db = new WorkoutDatabase(WorkoutDiary.this);
         no_data = findViewById(R.id.nodata);
         img_empty = findViewById(R.id.imageView);
+
+        navigation = findViewById(R.id.bottom_nav);
+        navigation.setSelectedItemId(R.id.nav_workout);
+
+        navigation.setOnNavigationItemSelectedListener(new BottomNavigationView.OnNavigationItemSelectedListener() {
+            @Override
+            public boolean onNavigationItemSelected(@NonNull MenuItem item) {
+
+                switch (item.getItemId())
+                {
+                    case R.id.nav_profile:
+                        startActivity(new Intent(getApplicationContext(),ProfileMainPage.class));
+                        overridePendingTransition(0,0);
+                        return true;
+
+                    case R.id.nav_eating:
+                        startActivity(new Intent(getApplicationContext(),MealPlan.class));
+                        overridePendingTransition(0,0);
+                        return true;
+
+                    case R.id.nav_home:
+                        startActivity(new Intent(getApplicationContext(),Dashboard.class));
+                        overridePendingTransition(0,0);
+                        return true;
+                }
+                return false;
+            }
+        });
+
 
         add.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -145,6 +179,7 @@ public class WorkoutDiary extends AppCompatActivity {
                     db.addExercise(exnameTXT,nrsetsTXT,nrrepsTXT);
                     Intent intent = new Intent(WorkoutDiary.this, WorkoutDiary.class);
                     startActivity(intent);
+                    overridePendingTransition(0,0);
                     finish();
                 }
             }
@@ -169,6 +204,7 @@ public class WorkoutDiary extends AppCompatActivity {
                 db.deleteall();
                 Intent intent = new Intent(WorkoutDiary.this, WorkoutDiary.class);
                 startActivity(intent);
+                overridePendingTransition(0,0);
                 finish();
 
             }

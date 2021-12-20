@@ -58,6 +58,7 @@ public class CustomAdapterExercises extends RecyclerView.Adapter<CustomAdapterEx
                 intent.putExtra("sets", String.valueOf(ex_sets.get(position)));
                 intent.putExtra("reps", String.valueOf(ex_reps.get(position)));
                 activity.startActivityForResult(intent,1);
+                activity.overridePendingTransition(0,0);
                 activity.finish();
 
             }

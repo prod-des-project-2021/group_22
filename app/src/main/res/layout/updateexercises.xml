@@ -11,25 +11,34 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:hint="Exercise Name"
+        android:textColor="@color/white"
         app:layout_constraintTop_toTopOf="parent"
-        android:layout_marginTop="90dp"/>
+        android:layout_marginTop="90dp"
+        android:backgroundTint="@color/white"
+        android:textColorHint="@color/white"/>
 
     <EditText
         android:id="@+id/edit_ex_set"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:hint="Number Of Sets"
+        android:textColor="@color/white"
         app:layout_constraintTop_toTopOf="@+id/edit_ex_name"
-        android:layout_marginTop="60dp"/>
+        android:layout_marginTop="60dp"
+        android:backgroundTint="@color/white"
+        android:textColorHint="@color/white"/>
     <EditText
         android:id="@+id/edit_ex_rep"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:hint="Number Of Reps"
+        android:textColor="@color/white"
         app:layout_constraintTop_toTopOf="@+id/edit_ex_set"
-        android:layout_marginTop="60dp"/>
+        android:layout_marginTop="60dp"
+        android:backgroundTint="@color/white"
+        android:textColorHint="@color/white"/>
 
-    <Button
+    <androidx.appcompat.widget.AppCompatButton
         android:id="@+id/updateex"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
@@ -38,9 +47,11 @@
         app:layout_constraintTop_toTopOf="@+id/edit_ex_rep"
         android:layout_marginTop="100dp"
         android:padding="12dp"
+        android:textColor="@color/white"
+        android:background="@drawable/button_made"
         />
 
-    <Button
+    <androidx.appcompat.widget.AppCompatButton
         android:id="@+id/deletex"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
@@ -49,6 +60,8 @@
         app:layout_constraintTop_toTopOf="@+id/updateex"
         android:layout_marginTop="65dp"
         android:padding="12dp"
+        android:textColor="@color/white"
+        android:background="@drawable/button_made"
         />
 
 </androidx.constraintlayout.widget.ConstraintLayout>

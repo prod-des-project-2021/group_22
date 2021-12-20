@@ -63,6 +63,7 @@ public class StartActivity extends AppCompatActivity
                     db.delete();
                     db.addUser(nameTXT,ageTXT,heightTXT,weightTXT,sexTXT);
                     openQuestionnaire2();
+                    overridePendingTransition(0,0);
                     finish();
                 }
             }
